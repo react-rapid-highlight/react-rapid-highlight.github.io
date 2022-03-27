@@ -1,37 +1,25 @@
-## Welcome to GitHub Pages
+# react-rapid-highlight
 
-You can use the [editor on GitHub](https://github.com/react-virtualized-highlight/react-virtualized-highlight.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Light and fast code highlight component for React applications
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- [highlight.js](https://www.npmjs.com/package/highlight.js) is used for code highlighting
+- [react-virtualized](https://www.npmjs.com/package/react-virtualized) is used to provide fast scrolling for large files.
 
-### Markdown
+## Usage
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Import the Highlight component:
 
-```markdown
-Syntax highlighted code block
+``import { Highlight } from 'react-rapid-highlight'``
 
-# Header 1
-## Header 2
-### Header 3
+Render the component:
 
-- Bulleted
-- List
+``<Highlight language='python' text='print('Hello World!')' fontSize={14} rowHeight={30} /> ``
 
-1. Numbered
-2. List
+----------------------------------------------------------------------------------------------
 
-**Bold** and _Italic_ and `Code` text
+The following ``props`` can be passed to the ``Highlight`` component:
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/react-virtualized-highlight/react-virtualized-highlight.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+- ``language``: The language you want to highlight. A list of options can be found at: [highlight.js supported languages](https://github.com/highlightjs/highlight.js/blob/main/SUPPORTED_LANGUAGES.md)
+- ``text``: The code you want to highlight. This library is suited for highlighting large blocks of code, as it applies react-virtualized to highlight and render only the visible parts of the code.
+- ``fontSize [Optional]``: The font size your highlighted code.
+- ``rowHeight [Optional]``: The height of each line of highlighted code.
